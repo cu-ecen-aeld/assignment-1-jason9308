@@ -14,9 +14,18 @@
 */
 void test_validate_my_username()
 {
+    char *name1 = malloc_username_from_conf_file();
+    const char *name2 = my_username();
+	if (name1 == NULL || name2 == NULL) {
+        printf("Get username fail.\n");
+		exit(EXIT_FAILURE);
+	}
+
+    TEST_ASSERT_EQUAL_STRING_MESSAGE(name1, name2, "The usernames must be identical.");
     /**
      * TODO: Replace the line below with your code here as described above to verify your /conf/username.txt 
      * config file and my_username() functions are setup properly
      */
-    TEST_ASSERT_TRUE_MESSAGE(false,"AESD students, please fix me!");
+
+    //TEST_ASSERT_TRUE_MESSAGE(false,"AESD students, please fix me!");
 }
